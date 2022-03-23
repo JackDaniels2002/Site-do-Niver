@@ -1,6 +1,5 @@
 //Filtra a tabela
-var campoFiltro = filtraTabela();
-
+filtraTabela();
 
 //Atualiza a tabela com as informações do formulário
 function atualizaTabela(event) {
@@ -106,7 +105,7 @@ function calculaNiver() {
     var niver = document.getElementById("niver").value;
     var anoCalculo = agora.getFullYear();
 
-    //var ano_pessoa = niver.split('-')[0];
+    var ano_pessoa = niver.split('-')[0];
     var mes_pessoa = niver.split('-')[1] - 1;
     var dia_pessoa = niver.split('-')[2];
 
@@ -115,7 +114,6 @@ function calculaNiver() {
     } else if (mes_pessoa == agora.getMonth() && dia_pessoa < agora.getDate()) {
         anoCalculo = anoCalculo + 1;
     }
-
 
     var niverValido = new Date(anoCalculo, mes_pessoa, dia_pessoa);
 
