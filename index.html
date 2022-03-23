@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tabela Maneira</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styleTable.css">
+</head>
+
+<body>
+    <div class="titulo_tabela">
+        <h1>Tabela de Aniversário do pessoal!</h1>
+    </div>
+
+    <div class="titulo_form">
+        <h2>Coloque suas informações aqui!</h2>
+    </div>
+    <div>
+        <form id="form" method="post" onsubmit="validaPessoa()">
+            <div class="div-label">
+                <label for="nome" class="Labels">Nome:</label>
+                <input type="text" class="campo" id="nome" name="nome" placeholder="nome" required />
+            </div>
+            <div class="div-label">
+                <label for="date" class="Labels">Data de Nascimento:</label>
+                <input type="date" class="campo" id="niver" name="niver" required />
+            </div>
+            <div class="div-label">
+                <label for="Cel" class="Labels">Número de Cel</label>
+                <input type="tel" class="campo" name="tel" maxlength="15" id="tel" placeholder="(xx)xxxxx-xxxx" />
+            </div>
+            <div class="div-label">
+                <label for="email" class="Labels">E-mail:</label>
+                <input type="email" class="campo" id="email" name="email" placeholder="exemplo@email.com" />
+            </div>
+
+
+            <div class="botaoAtualiza">
+                <button class="botao botao-cor" id="atualizaTab" type="submit" value="Inserir Linha"
+                    onclick="atualizaTabela(event)">Atualizar a tabela
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <!--<div class="botaoBusca">
+        <button class="botao botao-cor" id="buscaPessoa" type="submit" value="Busca Pessoa"
+            onclick="buscaPessoa(event)">Buscar Pessoa
+        </button> 
+        <span class="invisivel" id="erro-ajax">Erro ao buscar as pessoas</span>
+    </div>-->
+    <div class="div-tabela">
+        <div class="div-label" id="div-filtro">
+            <label for="filtraTabela">Procurando alguém específico?</label>
+            <input type="text" id="filtraTabela" name="filtro" placeholder="digite o nome aqui">
+        </div>
+
+        <table class="table" id="tabela">
+
+            <thead class="headTabela">
+                <tr>
+                    <th>Nome</th>
+                    <th>Aniversário</th>
+                    <th>Número de Cel</th>
+                    <th>E-mail</th>
+                    <th>Próximo Aniversário</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabelaCorpo">
+                <!--<tr class="pessoa">
+                    <td class="info-nome">Daniel</td>
+                    <td class="info-niver">2002-04-12</td>
+                    <td class="info-tel">(11)96852-7608</td>
+                    <td class="info-email">danielsalvini.ds@gmail.com</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/principal.js"></script>
+    <script src="js/buscaPessoa.js"></script>
+
+</body>
