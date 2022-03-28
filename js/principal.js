@@ -15,7 +15,6 @@ function atualizaTabela(event) {
         addPessoa(pessoa);
 
         //reseta o formulário após o click
-
         form.reset();
     }
 
@@ -142,7 +141,12 @@ function calculaNiver() {
         } else {
             resultado = ("Faltam " + diffMesExt + " meses");
         }
-    } else if (diffMesExt == 0 && sobraDia == 0) {
+    } else if (diffMesExt >= 12) {
+        resultado = ("Falta 1 ano");
+
+    } 
+    
+    if (agora == niver) {
         resultado = ("É hoje! Feliz Aniversário!");
     }
     console.log(resultado);

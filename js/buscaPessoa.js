@@ -6,7 +6,7 @@ function buscaPessoa(event) {
     var buscaBotao = document.querySelector("#buscaPessoa");;
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "#"); //Ainda sem url para receber as infos, para teste usar: https://api-pacientes.herokuapp.com/pacientes
+    xhr.open("GET", "https://api-pacientes.herokuapp.com/pacientes"); //Ainda sem url para receber as infos, para teste usar: https://api-pacientes.herokuapp.com/pacientes
 
     xhr.addEventListener("load", function () {
         var erroAjax = document.querySelector("#erro-ajax");
